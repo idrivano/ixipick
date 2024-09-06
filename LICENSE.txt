@@ -1,0 +1,18 @@
+// MIT License
+//
+// Copyright (c) 2024 Adamou IDRISSOU
+//
+// Permission est accordée, sans frais, à toute personne acquérant une copie
+// de ce logiciel et des fichiers de documentation associés (le "Logiciel"), d'exploiter
+// le Logiciel sans restriction, sous réserve des conditions suivantes :
+//
+// La notification de droit d'auteur ci-dessus et cette notification de permission
+// doivent être incluses dans toutes les copies ou parties substantielles du Logiciel.
+//
+// LE LOGICIEL EST FOURNI "EN L'ÉTAT", SANS GARANTIE D'AUCUNE SORTE, EXPRESSE OU IMPLICITE,
+// Y COMPRIS MAIS SANS S'Y LIMITER À, LES GARANTIES IMPLICITES DE COMMERCIALISATION,
+// D'ADAPTATION À UN USAGE PARTICULIER ET DE NON-VIOLATION. EN AUCUN CAS LES AUTEURS
+// OU DÉTENTEURS DU DROIT D'AUTEUR NE POURRONT ÊTRE TENUS RESPONSABLES DE TOUTE RÉCLAMATION,
+// DOMMAGE OU AUTRE RESPONSABILITÉ, QUE CE SOIT EN ACTION DE CONTRAT, DE RESPONSABILITÉ STRICTE
+// OU DE DÉLIT, RÉSULTANT DE, OU EN RELATION AVEC, LE LOGICIEL OU L'UTILISATION OU AUTRES
+// TRANSACTIONS DANS LE LOGICIEL.
