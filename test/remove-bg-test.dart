@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ixipick/network/services/removebg_service.dart';
@@ -10,9 +11,7 @@ import 'package:path/path.dart' as path;
 
 
 class MockRemoveBgService extends Mock implements RemoveBgService {}
-
 class MockImagePicker extends Mock implements ImagePicker {}
-
 class MockDirectory extends Mock implements Directory {}
 
 void main() {
@@ -27,22 +26,23 @@ void main() {
   testWidgets('Test image selection and processing flow', (WidgetTester tester) async {
     await tester.pumpWidget(const MaterialApp(home: HomePage()));
 
+    // Initialisation
     expect(find.text('Proceder'), findsOneWidget);
     expect(find.text('Télecharger'), findsNothing);
 
-    // Simulate image selection from gallery
+    // Simuler une selection d'image dans la gallerie
     final tempImage = File('path/to/temp_image.png');
     when(mockImagePicker.pickImage(source: ImageSource.gallery, imageQuality: 50))
         .thenAnswer((_) async => XFile(tempImage.path));
 
-    // Simulate clicking the gallery button
+    // Simuler un click pour aller dans la gallerie
     await tester.tap(find.byIcon(Icons.photo));
     await tester.pump();
 
-    // Check if the image is loaded
+    // Verifier si l'image à ete recuperer
     expect(find.byType(FileImage), findsOneWidget);
 
-    // Simulate image processing
+    // Simuler le traitement de l'image
     final tempDir = await getTemporaryDirectory();
     final resultFilePath = path.join(tempDir.path, 'result-ixipick.png');
 
@@ -52,10 +52,10 @@ void main() {
     await tester.tap(find.text('Proceder'));
     await tester.pump();
 
-    // Verify that the service was called
+    // Verifier si l'appel du service editImage fonctionne
     verify(mockRemoveBgService.editImage(tempImage.path, resultFilePath)).called(1);
 
-    // Ensure the download button appears after processing
+    // Verifier si le button "Télecharger" fonctionne
     await tester.pump();
     expect(find.text('Télecharger'), findsOneWidget);
   });

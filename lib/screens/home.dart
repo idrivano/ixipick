@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
   bool isDownloadReady = false;
   final RemoveBgService _imageService = RemoveBgService();
 
+  // Methode pour selectionner l'image dans la gallerie ou pour camera
   Future<void> getImage(ImageSource source) async {
     final pickedFile = await picker.pickImage(source: source, imageQuality: 50);
     if (pickedFile != null){
@@ -36,6 +37,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> processImage() async {
+    // verifier si l'image à bien éte sélectionner
     if (imageFile == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Veuillez sélectionner une image.')),
@@ -73,6 +75,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  // Methode pour télécharger l'image traiter
   Future<void> downloadImage() async {
     if (imageFile != null) {
       try {

@@ -26,6 +26,7 @@ class _UpscalyPageState extends State<UpscalyPage> {
   bool isDownloadReady = false;
   final PicsArtService _picsArtService = PicsArtService();
 
+  // Methode pour selectionner l'image dans la gallerie
   Future<void> getImage(ImageSource source) async {
     final pickedFile = await picker.pickImage(source: source, imageQuality: 50);
     if (pickedFile != null) {
@@ -37,6 +38,7 @@ class _UpscalyPageState extends State<UpscalyPage> {
   }
 
   Future<void> editImage() async {
+    // verifier si l'image à bien éte sélectionner
     if (imageFile == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Veuillez sélectionner une image.')),
@@ -69,6 +71,7 @@ class _UpscalyPageState extends State<UpscalyPage> {
     }
   }
 
+  // Methode pour télécharger l'image traiter
   Future<void> downloadImage() async {
     if (downloadUrl != null) {
       setState(() {
